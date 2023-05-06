@@ -1,0 +1,8 @@
+Toe-to-Toe with AI: Battle it Out in Tic-Tac-Toe using Monte Carlo Tree Search
+
+This is a simple implementation of a Tic-Tac-Toe game where a human player competes against an AI using the Monte Carlo Tree Search (MCTS) algorithm. MCTS is a decision-making algorithm that uses random sampling and tree search to determine the best move in a given game state. It's particularly useful for games with a large search space and a high branching factor, like Go, but it can also be applied to simpler games like Tic-Tac-Toe.
+
+In this implementation, the game is represented as a 3x3 grid, where each cell can be empty, occupied by "X" or occupied by "O". The human player takes the "O" role, while the computer player takes the "X" role. The game turns until a winner or the board is full, resulting in a draw.
+The MCTS algorithm simulates thousands of random games from the current game state and constructs a search tree. Each node in the tree represents a game state, while the edges represent possible actions (moves). The algorithm selects nodes based on their Upper Confidence Bound (UCB) value, which balances exploitation (choosing nodes with high average rewards) and exploration (choosing nodes with fewer visits). The tree is expanded by adding children nodes for unexplored actions, and the rewards are backpropagated up the tree.
+
+In this Tic-Tac-Toe implementation, the MCTS algorithm is executed for 1000 iterations at each computer player's turn, and the move with the highest visit count is chosen as the best move. The human player is prompted to enter their move, and the game proceeds until a terminal state is reached (win, loss, or draw).
